@@ -1,0 +1,52 @@
+{"frames": {
+
+"runes_1_light.png":
+{
+	"frame": {"x":2,"y":394,"w":86,"h":96},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":5,"y":0,"w":86,"h":96},
+	"sourceSize": {"w":96,"h":96}
+},
+"runes_2_light.png":
+{
+	"frame": {"x":2,"y":296,"w":96,"h":96},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":96,"h":96},
+	"sourceSize": {"w":96,"h":96}
+},
+"runes_3_light.png":
+{
+	"frame": {"x":2,"y":198,"w":96,"h":96},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":96,"h":96},
+	"sourceSize": {"w":96,"h":96}
+},
+"runes_4_light.png":
+{
+	"frame": {"x":2,"y":100,"w":96,"h":96},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":96,"h":96},
+	"sourceSize": {"w":96,"h":96}
+},
+"runes_5_light.png":
+{
+	"frame": {"x":2,"y":2,"w":96,"h":96},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":96,"h":96},
+	"sourceSize": {"w":96,"h":96}
+}},
+"meta": {
+	"app": "http://www.texturepacker.com",
+	"version": "1.0",
+	"image": "runes.png",
+	"format": "RGBA8888",
+	"size": {"w":128,"h":512},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:e238daf184ddba4c13de686268bf4537$"
+}
+}

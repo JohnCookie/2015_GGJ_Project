@@ -1,0 +1,60 @@
+{"frames": {
+
+"actor_mode_2.png":
+{
+	"frame": {"x":902,"y":2,"w":96,"h":96},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":96,"h":96},
+	"sourceSize": {"w":96,"h":96}
+},
+"actor_mode_3.png":
+{
+	"frame": {"x":804,"y":2,"w":96,"h":96},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":96,"h":96},
+	"sourceSize": {"w":96,"h":96}
+},
+"code_light.png":
+{
+	"frame": {"x":2,"y":154,"w":600,"h":150},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":600,"h":150},
+	"sourceSize": {"w":600,"h":150}
+},
+"timer_light.png":
+{
+	"frame": {"x":604,"y":154,"w":380,"h":80},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":380,"h":80},
+	"sourceSize": {"w":380,"h":80}
+},
+"tool.png":
+{
+	"frame": {"x":2,"y":306,"w":680,"h":113},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":680,"h":113},
+	"sourceSize": {"w":680,"h":113}
+},
+"tool_light.png":
+{
+	"frame": {"x":2,"y":2,"w":800,"h":150},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":800,"h":150},
+	"sourceSize": {"w":800,"h":150}
+}},
+"meta": {
+	"app": "http://www.texturepacker.com",
+	"version": "1.0",
+	"image": "ui_items.png",
+	"format": "RGBA8888",
+	"size": {"w":1024,"h":512},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:2331c1d4e1e011fb065422fb5d910fd4$"
+}
+}
