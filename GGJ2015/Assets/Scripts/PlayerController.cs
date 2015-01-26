@@ -11,6 +11,9 @@ public class PlayerController : MonoBehaviour {
 	public float speedX=0;
 	public float speedY=0;
 
+	private bool lockMoveX=false;
+	private bool lockMoveY=false;
+
 	void Update(){
 		if(Input.GetKeyDown(KeyCode.UpArrow)){
 			speedY=1;
@@ -67,5 +70,16 @@ public class PlayerController : MonoBehaviour {
 				gameObject.transform.rotation= Quaternion.Euler(0,-135,0);
 			}
 		}
+	}
+
+	void OnCollisionEnter(Collision collision){
+		Debug.Log("collision");
+		Debug.Log("x:" + collision.contacts[0].normal.x);
+		Debug.Log("z:" + collision.contacts[0].normal.z);
+	}
+
+	void OnCollisionExit(Collision collision){
+		lockMoveX=false;
+		lockMoveY=false;
 	}
 }
