@@ -41,7 +41,7 @@ public class HelperController : MonoBehaviour
 			HintMgr.getInstance().hideHint();
 			ItemMgr.getInstance().stopWarning();
 			hasRun=true;
-			Destroy(gameObject,2);
+			Destroy(gameObject,1);
 		}
 	}
 }

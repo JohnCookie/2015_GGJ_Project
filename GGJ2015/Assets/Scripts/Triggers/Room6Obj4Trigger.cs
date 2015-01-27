@@ -6,9 +6,11 @@ public class Room6Obj4Trigger : MonoBehaviour
 	public GameObject trip;
 	public GameObject startTrigger;
 	public GameObject warningTimeObj;
+
+	bool isTrigger=false;
 	
 	void OnTriggerEnter (Collider collider){
-		if(collider.tag.Equals("GamePlayer")){
+		if(collider.tag.Equals("GamePlayer") && !isTrigger){
 			if(PlayerInfo.getInstance().hasRoom6Key2 && PlayerInfo.getInstance().hasRoom6Key3 && PlayerInfo.getInstance().hasRoom6Key1){
 				//ok
 				HintMgr.getInstance().showHint("Alarm Stoped");
@@ -25,7 +27,8 @@ public class Room6Obj4Trigger : MonoBehaviour
 	}
 	
 	void OnTriggerExit (Collider collider){
-		if(collider.tag.Equals("GamePlayer")){
+		if(collider.tag.Equals("GamePlayer") && !isTrigger){
+			isTrigger=true;
 			HintMgr.getInstance().hideHint();
 			Destroy(gameObject,3);
 			Destroy(trip , 1);

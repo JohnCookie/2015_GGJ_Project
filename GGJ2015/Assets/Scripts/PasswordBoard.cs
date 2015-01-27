@@ -13,6 +13,7 @@ public class PasswordBoard : MonoBehaviour
 		Debug.Log(result);
 		if(result.Equals("0125")){
 			Debug.Log("Correct");
+			HintMgr.getInstance().hideHint();
 			gameObject.SetActive(false);
 			CameraMgr.getInstance().cameraStatus=CameraStatus.FullLook;
 		}

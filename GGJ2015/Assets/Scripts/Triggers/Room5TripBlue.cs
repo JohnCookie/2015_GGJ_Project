@@ -13,6 +13,8 @@ public class Room5TripBlue : MonoBehaviour
 
 	public GameObject mPlayer;
 
+	public GameObject triggerHint;
+
 	void OnTriggerEnter (Collider collider){
 		if(collider.tag.Equals("GamePlayer")){
 			if(PlayerInfo.getInstance().hasRoom5KeyRed && PlayerInfo.getInstance().hasRoom5KeyYellow){
@@ -49,6 +51,8 @@ public class Room5TripBlue : MonoBehaviour
 				Destroy (triggerBlue,2);
 				Destroy (triggerYellow,2);
 				Destroy(triggerRed,2);
+
+				Destroy(triggerHint,1);
 			}
 		}
 	}

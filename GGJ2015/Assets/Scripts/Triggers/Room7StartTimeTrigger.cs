@@ -10,7 +10,7 @@ public class Room7StartTimeTrigger : MonoBehaviour
 	void OnTriggerEnter (Collider collider){
 		if(collider.tag.Equals("GamePlayer")){
 			if(!timeStart){
-				HintMgr.getInstance().showHint("Holy S**t ! ! !");
+				HintMgr.getInstance().showHint("Holy S**t ! ! ! It alarms again! ");
 				ItemMgr.getInstance().showWarning();
 				m_warningTimeObj.SetActive(true);
 				timeStart=true;

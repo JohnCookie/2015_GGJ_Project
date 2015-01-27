@@ -4,9 +4,10 @@ using System.Collections;
 public class Room4Obj2Trigger : MonoBehaviour
 {
 	public GameObject trip;
+	bool isTrigger=false;
 	
 	void OnTriggerEnter (Collider collider){
-		if(collider.tag.Equals("GamePlayer")){
+		if(collider.tag.Equals("GamePlayer") && !isTrigger){
 			if(PlayerInfo.getInstance().hasRoom4Key2){
 				//ok
 				HintMgr.getInstance().showHint("Seems You Can Go Now!");
@@ -20,9 +21,10 @@ public class Room4Obj2Trigger : MonoBehaviour
 	}
 	
 	void OnTriggerExit (Collider collider){
-		if(collider.tag.Equals("GamePlayer")){
+		if(collider.tag.Equals("GamePlayer") && !isTrigger){
+			isTrigger=true;
 			HintMgr.getInstance().hideHint();
-			Destroy(gameObject,3);
+			Destroy(gameObject,2);
 			Destroy(trip , 1);
 		}
 	}

@@ -71,15 +71,15 @@ public class PlayerController : MonoBehaviour {
 			}
 		}
 	}
-
-	void OnCollisionEnter(Collision collision){
-		Debug.Log("collision");
-		Debug.Log("x:" + collision.contacts[0].normal.x);
-		Debug.Log("z:" + collision.contacts[0].normal.z);
-	}
-
-	void OnCollisionExit(Collision collision){
-		lockMoveX=false;
-		lockMoveY=false;
-	}
+//
+//	void OnCollisionEnter(Collision collision){
+//		Debug.Log("collision");
+//		Debug.Log("x:" + collision.contacts[0].normal.x);
+//		Debug.Log("z:" + collision.contacts[0].normal.z);
+//	}
+//
+//	void OnCollisionExit(Collision collision){
+//		lockMoveX=false;
+//		lockMoveY=false;
+//	}
 }

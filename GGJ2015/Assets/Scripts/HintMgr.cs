@@ -39,7 +39,7 @@ public class HintMgr : MonoBehaviour
 		
 		public void hideHint(){
 			TweenAlpha alphaTween = m_hintLabel.transform.GetComponent<TweenAlpha>();
-			alphaTween.from = 1.0f;
+			alphaTween.from = m_hintLabel.alpha;
 			alphaTween.to=0.0f;
 			alphaTween.duration=1.0f;
 			alphaTween.ResetToBeginning();
@@ -47,7 +47,7 @@ public class HintMgr : MonoBehaviour
 			alphaTween.PlayForward();
 		}
 	
-	private string getStringFromId(int id){
+		private string getStringFromId(int id){
 			return "Get String From Id";
 		}
 }

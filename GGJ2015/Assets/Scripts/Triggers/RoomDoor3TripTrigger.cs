@@ -7,7 +7,7 @@ public class RoomDoor3TripTrigger : MonoBehaviour
 	public GameObject helper;
 
 	void OnTriggerEnter (Collider collider){
-		if(collider.tag.Equals("GamePlayer")){
+		if(collider.tag.Equals("GamePlayer") && !timeStart){
 			HintMgr.getInstance().showHint("Oh You Are Trapped");
 			ItemMgr.getInstance().showWarning();
 			passwordDoor.SetActive(true);
@@ -21,6 +21,7 @@ public class RoomDoor3TripTrigger : MonoBehaviour
 				HelperController helperScript = helper.GetComponent<HelperController>();
 				helperScript.startHelp();
 				CameraMgr.getInstance().cameraStatus=CameraStatus.FollowHelper;
+				HintMgr.getInstance().showHint("Somebody come to help you");
 				Destroy(gameObject);
 				hasRun=true;
 			}

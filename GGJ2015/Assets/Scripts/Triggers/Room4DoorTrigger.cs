@@ -22,7 +22,7 @@ public class Room4DoorTrigger : MonoBehaviour
 				PlayerInfo.getInstance().changePlayerMat(3);
 				AudioControler.getInstance().playOpenDoor();
 			}else{
-				HintMgr.getInstance().showHint("Speed up!");
+				HintMgr.getInstance().showHint("Come on!");
 			}
 		}
 	}

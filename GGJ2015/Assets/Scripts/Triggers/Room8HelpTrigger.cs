@@ -8,6 +8,7 @@ public class Room8HelpTrigger : MonoBehaviour
 	void OnTriggerEnter (Collider collider){
 		if(collider.tag.Equals("GamePlayer")){
 			if(!hasRun){
+				HintMgr.getInstance().showHint("You need a password to open the door");
 				PasswordBoard.SetActive(true);
 				hasRun=true;
 			}
@@ -18,7 +19,6 @@ public class Room8HelpTrigger : MonoBehaviour
 	
 	void OnTriggerExit (Collider collider){
 		if(collider.tag.Equals("GamePlayer")){
-			HintMgr.getInstance().hideHint();
 			Destroy(gameObject);
 		}
 	}
