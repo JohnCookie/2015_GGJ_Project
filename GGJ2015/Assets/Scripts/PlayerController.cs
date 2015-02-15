@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour {
 	public GameCameraMode gameCameraMode = GameCameraMode.UPDOWN_Mode;
 	float screenWidth=1600;
 	float screenHeight=900;
-	float mouseAgiScale = 0.003f;
+	float mouseAgiScale = 0.005f;
 
 	void Awake(){
 		CameraMgr.getInstance ().gameCameraMode = gameCameraMode;
@@ -120,15 +120,30 @@ public class PlayerController : MonoBehaviour {
 				horizonalSpeed=0;
 			}
 
-			//gameObject.rigidbody.velocity = new Vector3(verticalSpeed*speedScale/Mathf.Cos(gameObject.transform.eulerAngles.y),0,verticalSpeed*speedScale/Mathf.Sin(gameObject.transform.eulerAngles.y));
-
 			// Detect mouse position diff with center
 			float offsetOnVertical = Input.mousePosition.y - screenHeight/2;
 			float offsetOnHorizonal = Input.mousePosition.x - screenWidth/2;
+			if(Mathf.Abs(offsetOnHorizonal)>screenWidth/2){
+				offsetOnHorizonal = offsetOnHorizonal>0?screenWidth/2:-screenWidth/2;
+			}
 
 			Vector3 currEuler = gameObject.transform.eulerAngles;
 			Vector3 nextEuler = new Vector3(0, currEuler.y+offsetOnHorizonal*mouseAgiScale, currEuler.z);
-			gameObject.transform.eulerAngles=nextEuler;
+			if(Mathf.Abs(offsetOnHorizonal) > 100){
+				gameObject.transform.eulerAngles=nextEuler;
+			}
+
+			// Calculate the speed
+			float speedVerticalOnVertical = Mathf.Cos(RegToRad(currEuler.y))*verticalSpeed*speedScale;
+			float speedVerticalOnHorizonal = Mathf.Sin(RegToRad(currEuler.y))*verticalSpeed*speedScale;
+
+			float speedHorizonalOnVertical = Mathf.Cos(RegToRad(currEuler.y+90))*horizonalSpeed*speedScale;
+			float speedHorizonalOnHorizonal = Mathf.Sin(RegToRad(currEuler.y+90))*horizonalSpeed*speedScale;
+
+			float speedVerticalAfterConvert = speedVerticalOnVertical+speedHorizonalOnVertical;
+			float speedHorizonalAfterConvert = speedVerticalOnHorizonal+speedHorizonalOnHorizonal;
+
+			gameObject.rigidbody.velocity = new Vector3(speedHorizonalAfterConvert, 0, speedVerticalAfterConvert);
 
 			break;
 		default:
@@ -147,4 +162,12 @@ public class PlayerController : MonoBehaviour {
 //		lockMoveX=false;
 //		lockMoveY=false;
 //	}
+
+	float RadToReg(float _rad){
+		return _rad*180/Mathf.PI;
+	}
+
+	float RegToRad(float _reg){
+		return _reg * Mathf.PI / 180;
+	}
 }
